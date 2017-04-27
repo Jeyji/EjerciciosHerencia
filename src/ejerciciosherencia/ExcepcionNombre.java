@@ -9,17 +9,9 @@ package ejerciciosherencia;
  *
  * @author Estudiante
  */
-public abstract class Trabajador {
-    protected int id;
-
-    public Trabajador(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
+public class ExcepcionNombre extends Exception{
+    public ExcepcionNombre(){
+        super("Nombre debe tener mas de 10 caracteres");
     }
     
-    public abstract double calcularSalario();
-    public abstract String ListarIformacion();
 }

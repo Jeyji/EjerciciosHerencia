@@ -13,10 +13,23 @@ public abstract class Empleados extends Trabajador {
     protected String nombre;
     protected double salario;
 
-    public Empleados(String nombre, double salario, int id) {
+    public Empleados(String nombre, double salario, int id) throws ExcepcionNombre, ExcepcionSalario {
         super(id);
+      
+        if(nombre.length()<10)
+            throw new ExcepcionNombre();
+        if(salario<737000)
+            throw new ExcepcionSalario();
         this.nombre = nombre;
         this.salario = salario;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getSalario() {
+        return salario;
     }
     
 }

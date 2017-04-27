@@ -14,13 +14,19 @@ import java.util.ArrayList;
 public class LiderProyecto extends Programador{
     private ArrayList<Programador> programadores;
 
-    public LiderProyecto(ArrayList<Programador> programadores, String lenguaje, String nombre, double salario, int id) {
+    public LiderProyecto(String lenguaje, String nombre, double salario, int id) throws ExcepcionNombre, ExcepcionSalario, ExcepcionLenguaje {
         super(lenguaje, nombre, salario, id);
         this.programadores = new ArrayList<>();
     }
     public void addProgramador(Programador p){
         this.programadores.add(p);
     }
+
+    public ArrayList<Programador> getProgramadores() {
+        return programadores;
+    }
+    
+    
     @Override
     public double calcularSalario() {
         double salarioTotal = 0;

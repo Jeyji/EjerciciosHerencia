@@ -11,10 +11,18 @@ package ejerciciosherencia;
  */
 public class Administrador extends Empleados{
 
-    public Administrador(String nombre, double salario, int id) {
+    public Administrador(String nombre, double salario, int id) throws ExcepcionNombre, ExcepcionSalario {
         super(nombre, 100, id);
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+    
 
     @Override
     public double calcularSalario() {

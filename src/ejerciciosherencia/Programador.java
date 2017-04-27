@@ -12,9 +12,15 @@ package ejerciciosherencia;
 public class Programador extends Empleados{
     protected String lenguaje;
 
-    public Programador(String lenguaje, String nombre, double salario, int id) {
+    public Programador(String lenguaje, String nombre, double salario, int id) throws ExcepcionNombre, ExcepcionSalario, ExcepcionLenguaje {
         super(nombre, salario, id);
+        if(lenguaje.contentEquals("go"))
+            throw new ExcepcionLenguaje();
         this.lenguaje = lenguaje;
+    }
+
+    public String getLenguaje() {
+        return lenguaje;
     }
 
     @Override
@@ -29,6 +35,10 @@ public class Programador extends Empleados{
     @Override
     public String ListarIformacion() {
         return "Programador: "+ this.id + " " + this.nombre;
+    }
+
+    private void ExcepcionLenguaje() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

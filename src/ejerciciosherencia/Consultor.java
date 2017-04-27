@@ -17,6 +17,10 @@ public class Consultor extends Trabajador{
         this.labor = labor;
     }
 
+    public String getLabor() {
+        return labor;
+    }
+    
     @Override
     public double calcularSalario() {
         return 220;
